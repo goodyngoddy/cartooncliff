@@ -265,14 +265,15 @@ img {
 .footer {
   background: #5F0A0A;
   color: #FFDCA1;
-  height: 300px;
+  height: fit-content;
   font-family: Exo2-SemiBold;
   font-size: 12px;
-  padding: 5px;
+  padding: 5px 5px 30px 5px;
   
   & .newsletter {
     font-size: 11px;
     text-align: justify;
+    margin: 10px 0 20px 0;
     
     & form input {
       background: inherit;
@@ -301,6 +302,19 @@ img {
     }
   }
   
-  
+  & .contact-me .text{
+    font-size: 12px;
+  }
+  & .contact-me .list {
+    display: flex;
+    margin: 5px 0 5px 20px;
+    
+    & a {
+      display: block;
+      width: 25px;
+      height: 25px;
+      padding: 5px;
+    }
+  }
 }
 
