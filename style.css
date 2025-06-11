@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'Exo2-SemiBold';
-  src: url('/fonts/Exo2-SemiBold.ttf')
+  src: url('fonts/Exo2-SemiBold.ttf')
 }
 @font-face {
   font-family: 'TitanOne';
-  src: url('/fonts/TitanOne-Regular.ttf')
+  src: url('fonts/TitanOne-Regular.ttf')
 }
 @font-face {
   font-family: 'ComicRelief';
-  src: url('/fonts/ComicRelief-Regular.ttf')
+  src: url('fonts/ComicRelief-Regular.ttf')
 }
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins-Regular.ttf.txt')
+  src: url('fonts/Poppins-Regular.ttf.txt')
 }
 * {
   box-sizing: border-box;
@@ -148,6 +148,7 @@ body {
         }
       }
     }
+    
     & .gallery {
       margin: 5px 0;
       height: max-content;
@@ -157,7 +158,7 @@ body {
       align-items: center;
       overflow-x: scroll;
       gap: 10%;
-      height: 100%;
+      height: max-content;
       width: 100%;
       padding: 5px;
     
@@ -172,8 +173,9 @@ body {
         padding: 10px;
         flex-shrink: 0;
         align-content: center;
+        
         & img {
-          height: 100%;
+          width: 100%;
         }
       }
     }
