@@ -16,23 +16,18 @@
 }
 * {
   box-sizing: border-box;
+  transition: border-color .5s ease-in-out;
 }
 body {
   padding: 0;
   margin: 0;
   width: 100vw;
-  height: 100vh;
 }
 .app {
-  height: max-content;
+  height: 100%;
 }
 
-.app.user .landing, .signer, .app-main, .app.lin .landing {
-  display: none;
-}
-.landing, .app.user .signer, .app.lin .app-main {
-  display: block;
-}
+
 .top-bar {
   width: 100%;
   background: #ef0000;
@@ -45,18 +40,6 @@ body {
   z-index: 4;
 }
 
-.logo {
-  font-family: TitanOne;
-  font-weight: 900;
-  font-size: 20px;
-  letter-spacing: 1px;
-  -webkit-text-stroke: .04rem #fff;
-  text-shadow: 0 5px 7px #E8E8E8;
-}
-
-.logo.in-text {
-  font-size: 12px;
-}
 .landing {
   width: 100%;
   height: fit-content;
@@ -113,51 +96,62 @@ body {
   & .landing > div {
     flex-shrink: 0;
   }
-  & nav {
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 25%;
-    height: 100%;
-  }   
-  & .nav-item {
-    color: #fff;
-    width: fit-content;
-    font-size: 12px;
-    font-family: Exo2-SemiBold;
-    margin-bottom: 5px;
+  & .top-bar {
+    & .logo {
+      font-family: TitanOne;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: 1px;
+      -webkit-text-stroke: .04rem #fff;
+      text-shadow: 0 5px 7px #E8E8E8;
+    }
+    & nav {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 25%;
+      height: 100%;
+    
+      & .nav-item {
+        color: #fff;
+        width: fit-content;
+        font-size: 12px;
+        font-family: Exo2-SemiBold;
+        margin-bottom: 5px;
+      }
+    }
   }
+    
   & .main {
     width: 100%;
     height: 100%;
-  }    
-  & .greeting {
-    font-size: 12px;
-    color: #8992A6;
-    letter-spacing: 1px;
-    font-family: Exo2-SemiBold;
-    padding: 10px;
-    overflow-x: hidden;
-    width: 100%;
-  }  
-  & .open-greet {
-    font-size: 20px;
-    color: #000;
-    font-weight: bolder;
-  }
-  & .greet-logo {
-    font-family: TitanOne;
-    font-weight: 900;
-    -webkit-text-stroke: .01rem #ef0000;
-  }
-  & .gallery {
-    margin: 5px 0;
-    height: 200px;
-    position: relative;
-    background: #300;
+      
+    & .greeting {
+      font-size: 15px;
+      color: #8992A6;
+      letter-spacing: 1px;
+      font-family: Exo2-SemiBold;
+      padding: 10px;
+      width: 100%;
+      
+      & .open-greet {
+        font-size: 15px;
+        color: #000;
+        font-weight: 600;
     
-    & .gallery-img {
+        & .logo {
+          font-family: TitanOne;
+          font-weight: 900;
+          -webkit-text-stroke: .01rem #ef0000;
+          font-size: 15px;
+        }
+      }
+    }
+    & .gallery {
+      margin: 5px 0;
+      height: max-content;
+      background: #300;
       display: flex;
       justify-content: start;
       align-items: center;
@@ -166,157 +160,119 @@ body {
       height: 100%;
       width: 100%;
       padding: 5px;
-    }
     
-    & .gs-item {
-      border-radius: 5px;
-      box-shadow: 3px 3px 5px #C29EAA inset,
-                 -3px -3px 5px #C29EAA inset,
-                 1px 2px 5px #BDBDBD;
-      height: 100%;
-      background: #FFFFFF;
-      width: fit-content;
-      padding: 10px;
-      flex-shrink: 0;
-      align-content: center;
-    }
-    
-    & .gs-item.null {
-      width: 35%;
-      box-shadow: 0 0 0 #BB2F2F;
-      background: inherit;
-    }
-    & img {
-      height: 100%;
-    }
-    & .more-pics {
-      font-family: ComicRelief;
-      font-weight: bolder;
-      position: absolute;
-      right: 20px;
-      top: 30%;
-      background: #fff;
-      border-radius: 10px;
-      width: 100px;
-      aspect-ratio: 1;
-      z-index: 2;
-      font-size: 30px;
-      text-align: center;
-      box-shadow: 3px 5px 5px #BFBFBF,
-                 3px 5px 5px #FFD7D7 inset,
-                -3px -5px 5px #FFD7D7 inset;
-     color: #3C1515;
-    }
-  
-    & .gallery-cover {
-      position: absolute;
-      height: 100%;
-      width: 45%;
-      background: linear-gradient(to right, transparent 15%, #6D6D6D 85%);
-      opacity: .9;
-      top: 0;
-      right: 0;
-      z-index: 1;
-      box-shadow: 3px 0 5px #BDBDBD inset,
-                -3px 0 5px #BDBDBD inset;
-      border-radius: 0;
-    }
-  }
-  & .sign-btns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    width: 100%;
-    height: 50px;
-    margin: 10px 0;
-    font-family: TitanOne;
-    
-    & .btn {
-      width: 30%;
-      border: 2px solid #BFBFBF35;
-      border-radius: 5px;
-      box-shadow: 2px 2px 4px #BFBFBF;
-    }
-  }
-  & .comments {
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 0 3px;
-  
-    & .ttl {
-      background: #fea;
-      color: #500;
-      padding: 10px;
-      font-weight: 900;
-      font-family: Poppins;
-    }
-    
-    & .comment-cont {
-      padding: 5px;
-      height: fit-content;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      border: 1px solid #D5D5D5;
-    
-      & .comment {
-        display: grid;
-        grid-template-rows: 100%;
-        grid-template-columns: 10% 87%;
-        justify-content: start;
-        align-items: center;
-        gap: 5%;
-        box-shadow: 2px 2px 3px #D9D9D9;
-        border: 1px solid #D9D9D9;
+      & .gs-item {
         border-radius: 5px;
-        padding: 5px;
-        
-        & .img {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          border: 2px solid #BABABA;
-          
-          & img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-          }
+        box-shadow: 3px 3px 5px #C29EAA inset,
+                   -3px -3px 5px #C29EAA inset,
+                   1px 2px 5px #BDBDBD;
+        height: max-content;
+        background: #FFFFFF;
+        width: 100%;
+        padding: 10px;
+        flex-shrink: 0;
+        align-content: center;
+        & img {
+          height: 100%;
         }
-        & .text {
-          width: 100%;
-          height: fit-content;
-          letter-spacing: 0.04rem;
+      }
+    }
+    & .sign-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      width: 100%;
+      height: 50px;
+      margin: 10px 0;
+      font-family: TitanOne;
+      
+      & .btn {
+        width: 30%;
+        border: 2px solid #BFBFBF35;
+        border-radius: 5px;
+        box-shadow: 2px 2px 4px #BFBFBF;
+      }
+    }
+    & .comments {
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 0 3px;
+    
+      & .ttl {
+        background: #fea;
+        color: #500;
+        padding: 10px;
+        font-weight: 900;
+        font-family: Poppins;
+      }
+      
+      & .comment-cont {
+        padding: 5px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid #D5D5D5;
+      
+        & .comment {
+          display: grid;
+          grid-template-rows: 100%;
+          grid-template-columns: 10% 87%;
+          justify-content: start;
+          align-items: center;
+          gap: 5%;
+          box-shadow: 2px 2px 3px #D9D9D9;
+          border: 1px solid #D9D9D9;
+          border-radius: 5px;
+          padding: 5px;
           
-          & .user-id {
-            font-family: Poppins;
-            font-size: 12px;
-            color: #442C12;
-            font-weight: 900;
-          }
-          & .testimony {
-            font-size: 12px;
-            color: #91908F;
-            width: 100%;
-            font-family: ComicRelief;
-            padding: 5px 5px 5px 0;
-            text-align: justify;
-          }
-          & .user-report {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 5px 0 0;
-            font-size: 10px;
-            font-weight: 700;
-            font-family: Exo2-SemiBold;
-            color: #500;
-            & span {
-              color: gold;
+          & .img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #BABABA;
+            
+            & img {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
             }
-            & .timing {
+          }
+          & .text {
+            width: 100%;
+            height: fit-content;
+            letter-spacing: 0.04rem;
+            
+            & .user-id {
+              font-family: Poppins;
+              font-size: 12px;
+              color: #442C12;
               font-weight: 900;
+            }
+            & .testimony {
+              font-size: 12px;
+              color: #91908F;
+              width: 100%;
+              font-family: ComicRelief;
+              padding: 5px 5px 5px 0;
+              text-align: justify;
+            }
+            & .user-report {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0 5px 0 0;
+              font-size: 10px;
+              font-weight: 700;
+              font-family: Exo2-SemiBold;
+              color: #500;
+              & span {
+                color: gold;
+              }
+              & .timing {
+                font-weight: 900;
+              }
             }
           }
         }
@@ -386,13 +342,6 @@ body {
   }
 }
 
-.app.pop {
-  overflow: hidden;
-  height: 100%;
-}
-.app.pop .pop-up {
-  display: flex;
-}
 .signer {
   width: 100%;
   margin: auto;
@@ -557,13 +506,6 @@ body {
   }
 }
 
-.app-body.me .cont-hm, .cont-me {
-  display: none;
-}
-.app-body.me .cont-me {
-  display: block;
-}
-
 .sign-up-el, .log-in-el {
   width: 100%;
   margin-top: 20px;
@@ -600,6 +542,9 @@ body {
     font-size: 14px;
     font-family: Exo2-SemiBold;
   }
+  & input:focus {
+    border-color: #2B2B2B;
+  }
   & button {
     width: 150px;
     text-align: center;
@@ -625,6 +570,21 @@ body {
   border-radius: 5px;
 }
 
+.app.user .landing, .signer, .app-main, .app.lin .landing {
+  display: none;
+}
+.landing, .app.user .signer, .app.lin .app-main {
+  display: block;
+}
+
+.app.pop {
+  overflow: hidden;
+  height: 100%;
+}
+.app.pop .pop-up {
+  display: flex;
+}
+
 .signer.log .sign-up-el, .log-in-el, .sign-s, .signer.log .log-s {
   display: none;
 }
@@ -632,4 +592,9 @@ body {
 .signer.log .log-in-el, .sign-up-el, .log-s, .signer.log .sign-s  {
   display: block;
 }
-
+.app-body.me .cont-hm, .cont-me {
+  display: none;
+}
+.app-body.me .cont-me {
+  display: block;
+}
